@@ -37,7 +37,7 @@
 	.navbar>.container .navbar-brand { margin-left: 15px; }
 	.navbar-collapse { border: 0; }
 	.navbar-toggle { margin-top: 16px; }
-	.navbar-toggle .icon-bar { background: #5d5d5d; }
+	.navbar-toggle .icon-bar { background: #000; }
 	ul.navbar-nav li a { padding: 15px 20px; text-align: left; }
 	ul.navbar-nav li a br { display: none; }
 	ul.navbar-nav li a i { padding-right: 7px; }
@@ -64,6 +64,26 @@
 	.footer-copyright, .footer-social { text-align: center; }
 	.footer-social a { margin: 0 5px; }
 
+    .navbar-brand {
+    	display: none;
+    }
+    .navbar {
+    	background-color: transparent;
+    	z-index: 1000;
+    }	
+    ul.navbar-nav li.active a {
+	    border-color: #FFF;
+        border-top: 5px solid #eee;
+        background-color: #f7f7f7;
+	}
+	ul.navbar-nav li a {
+	    border-top: 5px solid #eee;
+	}
+	.slider-2-container {
+	    margin-top: -60px;
+    	height: 100vh;
+	}
+
 }
 
 @media (max-width: 400px) {
@@ -71,16 +91,3 @@
 	.flex-caption { display: none; }
 	
 }
-
-
-/* Retina-ize images/icons */
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 2dppx) {
-	
-	/* logo */
-    .navbar-brand {
-    	background-image: url(../img/logo@2x.png) !important; background-repeat: no-repeat !important; background-size: 167px 63px !important;
-    }
-	
-}
-
