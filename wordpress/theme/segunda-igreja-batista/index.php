@@ -1,13 +1,13 @@
 <?php get_header(); ?>
+	<?php get_navbar(1); ?>
     <!-- Slider 2 -->
     <div class="slider-2-container">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-sm-offset-2 slider-2-text wow fadeInUp">
-                    <h1>Segunda Igreja Batista</span> em Quissamã.</h1>
+                    <h1><?php bloginfo('name'); ?></h1>
             		<p>
-            			"Olhando firmemente para Jesus, autor e consumador da nossa fé..."
-            			<br><b>- Hebreus 12:2</b>
+            			<?php bloginfo('description'); ?></b>
             		</p>
                 </div>
             </div>
@@ -46,7 +46,7 @@
 		                    <a class="big-link-1" href="<?php the_permalink() ?>">Leia Mais</a>
 		                </div>
 					</div>
-				<?php endwhile; ?>
+				<?php endwhile; endif; ?>
             </div>
         </div>
     </div>

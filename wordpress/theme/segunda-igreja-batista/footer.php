@@ -71,7 +71,15 @@
         <script src="<?php bloginfo( 'template_url' ); ?>/assets/flexslider/jquery.flexslider-min.js"></script>
         <script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jflickrfeed.min.js"></script>
         <script src="<?php bloginfo( 'template_url' ); ?>/assets/js/masonry.pkgd.min.js"></script>
-        <script src="<?php bloginfo( 'template_url' ); ?>/http://maps.google.com/maps/api/js?sensor=true"></script>
+
+        <?php
+            if ( is_page_template( 'sobre.php' ) ) { 
+        ?>
+                <script src="<?php bloginfo( 'template_url' ); ?>/http://maps.google.com/maps/api/js?sensor=true"></script>
+        <?php
+            }
+        ?>
+        
         <script src="<?php bloginfo( 'template_url' ); ?>/assets/js/jquery.ui.map.min.js"></script>
         <script src="<?php bloginfo( 'template_url' ); ?>/assets/js/scripts.js"></script>
 

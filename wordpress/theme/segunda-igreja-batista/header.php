@@ -34,6 +34,4 @@
         <!-- Favicon and touch icons -->
         <link rel="shortcut icon" href="<?php bloginfo( 'template_url' ); ?>/assets/ico/favicon.ico">
     </head>
-
     <body>
-        

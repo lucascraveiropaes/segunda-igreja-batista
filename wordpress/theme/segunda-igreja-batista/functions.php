@@ -1,7 +1,5 @@
 <?php
-
 	function get_navbar($id) {
-
 	/*
 		The 'id' variable represents the position on the navbar that must be active
 	*/
@@ -72,13 +70,10 @@
 	</nav>
 <?php
 	}
-
 	add_theme_support('category-thumbnails');
 	add_theme_support('post-thumbnails');
 	add_theme_support( 'title-tag' );
-
  	/* Changing Post Into Pastoral */
-
 	function change_post_label() {
 	    global $menu;
 	    global $submenu;
@@ -103,55 +98,43 @@
 	    $labels->all_items = 'Todas as Pastorais';
 	    $labels->menu_name = 'Pastorais';
 	    $labels->name_admin_bar = 'Pastorais';
-
 	    $wp_post_types['post']->menu_icon = 'dashicons-admin-comments';
 	}
 	 
 	add_action( 'admin_menu', 'change_post_label' );
 	add_action( 'init', 'change_post_into_pastoral' );
-
  	/* Change the excerpt lenght */
 	function excerpt_new_lenght($length) {
 		return 30;
 	}
 	add_filter('excerpt_length', 'excerpt_new_lenght');
-
  	/* Removing Tags */
-
  	function myprefix_unregister_tags() {
 	    unregister_taxonomy_for_object_type('post_tag', 'post');
 	}
 	add_action('init', 'myprefix_unregister_tags');
-
  	/* Hiding Help Box */
-
 	function hide_help() {
 	    echo '<style type="text/css">
 	            #contextual-help-link-wrap { display: none !important; }
 	          </style>';
 	}
 	add_action('admin_head', 'hide_help');
-
  	/* Adding Credits */
-
 	function remove_footer_admin () {
 	  	echo 'Desenvolvidor por <a href="http://lucascraveiropaes.com" target="_blank">Lucas Craveiro Paes</a>';
 	}
 	add_filter('admin_footer_text', 'remove_footer_admin');
-
 	/* Removing Comments for Good */
-
 	add_action( 'admin_menu', 'my_remove_admin_menus' );
 	function my_remove_admin_menus() {
 	    remove_menu_page( 'edit-comments.php' );
 	}
-
 	add_action('init', 'remove_comment_support', 100);
 	function remove_comment_support() {
 	    remove_post_type_support( 'post', 'comments' );
 	    remove_post_type_support( 'page', 'comments' );
 	}
-
 	function mytheme_admin_bar_render() {
 	    global $wp_admin_bar;
 	    $wp_admin_bar->remove_menu('comments');
